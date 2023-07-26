@@ -24,6 +24,7 @@ class HDDenCustomCode
         // добавляем страницу настроек
         add_action('admin_menu', function () {
 
+            // общая страница
             add_menu_page(
                 'Кастомный код',
                 'HDDen кастомный код',
@@ -34,6 +35,8 @@ class HDDenCustomCode
                 90
             );
 
+            // первая операция, ссылка
+            // get_admin_url(null, 'admin.php?page=csmed_coupons_page_export')
             add_submenu_page(
                 'hdden_custom_code',
                 'Первая операция',
@@ -42,7 +45,6 @@ class HDDenCustomCode
                 'hdden_custom_code_first',
                 array($this, 'firstProgram'),
             );
-
 
         });
     }
